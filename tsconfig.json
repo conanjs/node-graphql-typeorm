@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES6",
+        "sourceMap": true,
+
+        "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+        "outDir": "./dist",
+        // "baseUrl": "./",
+        // "rootDir": "./",
+
+        "incremental": true,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+        // "noImplicitAny": false,
+        // "noUnusedLocals": false,
+        // "noUnusedParameters": true,
+        "allowJs": true,
+
+        "isolatedModules": true,
+        "declarationMap": false,
+
+        "strictBindCallApply": false,
+        "forceConsistentCasingInFileNames": false,
+        "noFallthroughCasesInSwitch": false,
+        "esModuleInterop": true,
+        // "noImplicitReturns": true,
+        "paths": {
+            // "@Database/*": ["./src/@Database/*"],
+            // "@Routes/*": ["./src/@Routes/*"],
+            // "@Config/*": ["./src/@Config/*"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": [
+        "types.d.ts",
+        "t.d.ts",
+        "./src/**/*.tsx",
+        "./src/**/*.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ]
+}
