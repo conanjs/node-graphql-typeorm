@@ -32,7 +32,6 @@ export default class Application {
     }
     async startServer() {
         try {
-            if (isProduction) await AppDataSource.runMigrations();
             // sendMail("doquangvinh0708co@gmail.com", "<b>Hello Bae!</b>");
             [this.apolloServer] = await Promise.all([
                 createApolloServer(this.httpServer),

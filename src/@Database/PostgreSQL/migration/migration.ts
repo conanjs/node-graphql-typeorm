@@ -1,3 +1,4 @@
+import { isProduction } from "src/@Config";
 import { logger } from "../../../@Commons/loggers/LoggerService";
 import { AppDataSource } from "./app-data-source";
 
@@ -6,6 +7,7 @@ const startPostgreSQLDatabaseMigration = async () => {
         .then(async () => {
             // const y: any = 1;
             // y();
+            if (isProduction) await AppDataSource.runMigrations();
             logger.success("PostgreSQL Database Migration Successfully!");
         })
         .catch((error: any) => {
