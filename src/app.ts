@@ -4,9 +4,10 @@ import http from "http";
 import "reflect-metadata";
 import type { A } from "../t";
 import { logger } from "./@Commons/loggers/LoggerService";
-import env, { ConfigService } from "./@Config";
+import env, { ConfigService, isProduction } from "./@Config";
 import connectToMongoDB from "./@Database/MongoDB";
 import startPostgreSQLDatabaseMigration from "./@Database/PostgreSQL";
+import { AppDataSource } from "./@Database/PostgreSQL/migration/app-data-source";
 import createApolloServer from "./@Server/apolloServer/apolloServer";
 import { initializeRestRouter } from "./@Server/restHttpServer/initialize";
 import { sendMail } from "./@Utils/sendEmail";
@@ -31,11 +32,14 @@ export default class Application {
     }
     async startServer() {
         try {
+            if (isProduction) await AppDataSource.runMigrations();
             // sendMail("doquangvinh0708co@gmail.com", "<b>Hello Bae!</b>");
             [this.apolloServer] = await Promise.all([
                 createApolloServer(this.httpServer),
                 initializeRestRouter(this.app),
             ]);
+
+            this.apolloServer.run
 
             await Promise.all([
                 this.apolloServer.start().then(() => {

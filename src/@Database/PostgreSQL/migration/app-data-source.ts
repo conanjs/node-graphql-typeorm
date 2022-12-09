@@ -31,4 +31,4 @@ export const AppDataSource = new DataSource({
     subscribers: [],
 });
 
-if (isProduction) AppDataSource.runMigrations();
+// if (isProduction) AppDataSource.runMigrations();
