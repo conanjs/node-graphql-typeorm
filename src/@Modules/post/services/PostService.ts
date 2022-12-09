@@ -3,13 +3,11 @@ import { Service } from "typedi";
 import { EntityManager, FindManyOptions, LessThan } from "typeorm";
 import { logger } from "../../../@Commons/loggers/LoggerService";
 import { ExpressCtx, VoteType } from "../../../@Commons/types/ExpressCtx";
-import { G_MutationResponse } from "../../../@Commons/types/GMutationResponse";
 import { Post } from "../../../@Database/PostgreSQL/entities/Post";
 import { CreatePostInput } from "../types/CreatePostInput";
 import { PaginatedPosts } from "../types/PaginatedPosts";
 import { PostMutationResponse } from "../types/PostMutationResponse";
 import { UpdatePostInput } from "../types/UpdatePostInput";
-import { AppDataSource } from "../../../@Database/PostgreSQL/migration/app-data-source";
 import { UserInputError } from "apollo-server-express";
 import { Vote } from "../../../@Database/PostgreSQL/entities/Vote";
 
