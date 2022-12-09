@@ -11,13 +11,13 @@ import { User } from "../../../@Database/PostgreSQL/entities/User";
 import { UserMutationResponse } from "../types/UserMutationResponse";
 import { RegisterInput } from "../types/RegisterInput";
 import { LoginInput } from "../types/LoginInput";
-import UserService from "../services/userService";
 import { ExpressCtx } from "../../../@Commons/types/ExpressCtx";
 import { ExpressContext } from "apollo-server-express";
 import { Service } from "typedi";
 import { logger } from "../../../@Commons/loggers/LoggerService";
 import { ForgotPasswordInput } from "../types/ForgotPasswordInput";
 import { ChangePasswordInput } from "../types/ChangePasswordInput";
+import UserService from "../services/UserService";
 
 @Service()
 @Resolver((_of) => User)

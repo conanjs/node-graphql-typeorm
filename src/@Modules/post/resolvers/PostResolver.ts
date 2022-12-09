@@ -24,7 +24,7 @@ import {
     buildDataLoaders,
     buildVoteTypeLoaders,
 } from "../../../@Utils/dataLoader";
-import { PostService } from "../services/postService";
+import { PostService } from "../services/PostService";
 import { CreatePostInput } from "../types/CreatePostInput";
 import { PaginatedPosts } from "../types/PaginatedPosts";
 import { PostMutationResponse } from "../types/PostMutationResponse";
