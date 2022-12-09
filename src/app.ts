@@ -39,8 +39,6 @@ export default class Application {
                 initializeRestRouter(this.app),
             ]);
 
-            this.apolloServer.run
-
             await Promise.all([
                 this.apolloServer.start().then(() => {
                     this.apolloServer.applyMiddleware({
