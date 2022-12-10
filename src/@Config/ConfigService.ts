@@ -45,8 +45,7 @@ export class ConfigService {
                     // JS FrontEnd cannot read (access) this cookies
                     httpOnly: true,
                     // protection against CSRF
-                    sameSite: "none",
-                    // domain: "http://localhost:3000"
+                    sameSite: isProduction ? "none" : "lax",
                 },
             })
         );
