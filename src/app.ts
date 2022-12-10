@@ -48,6 +48,7 @@ export default class Application {
                                 origin: [
                                     "http://localhost:3000",
                                     "https://studio.apollographql.com",
+                                    "https://next-chakra-node-graphql-postgres.vercel.app"
                                 ],
                                 credentials: true,
                             },
@@ -64,7 +65,7 @@ export default class Application {
         }
     }
     async bootAppServer() {
-        const port: any = process.env.PORT || 3009;
+        const port: number = Number(env.PORT) || 3009;
         this.app.listen(port, () => {
             logger.success(
                 `Server now is listening on port ${port}. GraphQL Apollo Server started on http://localhost:${port}${this.apolloServer.graphqlPath}`

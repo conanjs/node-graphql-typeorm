@@ -15,6 +15,7 @@ export class ConfigService {
                           "http://localhost:3000",
                           "https://studio.apollographql.com",
                           "http://localhost:3002",
+                          "https://next-chakra-node-graphql-postgres.vercel.app"
                       ],
                 methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
                 credentials: true,
