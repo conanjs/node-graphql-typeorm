@@ -46,7 +46,7 @@ export class ConfigService {
                     httpOnly: true,
                     // protection against CSRF
                     sameSite: "lax",
-                    domain: "http://localhost:3000"
+                    // domain: "http://localhost:3000"
                 },
             })
         );
