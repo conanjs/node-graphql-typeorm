@@ -39,13 +39,13 @@ export class ConfigService {
                 }),
                 cookie: {
                     // cookie only works in https
-                    secure: false,
+                    secure: isProduction,
                     maxAge: 1000 * 60 * 60,
                     // maxAge: 1,
                     // JS FrontEnd cannot read (access) this cookies
                     httpOnly: true,
                     // protection against CSRF
-                    sameSite: "lax",
+                    sameSite: "none",
                     // domain: "http://localhost:3000"
                 },
             })
