@@ -7,7 +7,7 @@ const startPostgreSQLDatabaseMigration = async () => {
         .then(async () => {
             // const y: any = 1;
             // y();
-            if (isProduction) await AppDataSource.runMigrations();
+            // if (isProduction) await AppDataSource.runMigrations();
             logger.success("PostgreSQL Database Migration Successfully!");
         })
         .catch((error: any) => {
