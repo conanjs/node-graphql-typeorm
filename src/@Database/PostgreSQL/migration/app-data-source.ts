@@ -9,21 +9,21 @@ import { User } from "../entities/User";
 import { Vote } from "../entities/Vote";
 
 export const AppDataSource = new DataSource({
-    type: env.DB_TYPE as "postgres",
-    host: env.DB_HOST,
-    port: env.DB_PORT as any,
-    username: env.DB_USERNAME,
-    password: env.DB_PASSWORD,
-    database: env.DB_DBNAME,
-    ...(isProduction
-        ? {
-              extra: {
-                  ssl: {
-                      rejectUnauthorized: true,
-                  },
-              },
-          }
-        : {}),
+    type: "postgres" as "postgres",
+    host: "postgresql-99441-0.cloudclusters.net",
+    port: 10092 as any,
+    username: "admin",
+    password: "12345678",
+    database: "next-graph-typeorm-migrations",
+    // ...(isProduction
+    //     ? {
+    //           extra: {
+    //               ssl: {
+    //                   rejectUnauthorized: true,
+    //               },
+    //           },
+    //       }
+    //     : {}),
     synchronize: isProduction ? false : true,
     logging: true,
     entities: [User, Post, Vote, Customer, Photo],
