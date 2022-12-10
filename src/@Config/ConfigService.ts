@@ -39,7 +39,7 @@ export class ConfigService {
                 }),
                 cookie: {
                     // cookie only works in https
-                    secure: isProduction,
+                    secure: false,
                     maxAge: 1000 * 60 * 60,
                     // maxAge: 1,
                     // JS FrontEnd cannot read (access) this cookies

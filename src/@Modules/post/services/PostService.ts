@@ -179,6 +179,8 @@ export class PostService {
             };
         }
 
+        await Vote.delete({ postId: id });
+
         await Post.delete({ id });
         return {
             code: 200,
